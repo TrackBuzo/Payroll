@@ -1,5 +1,12 @@
 
+import database.DatabaseImpl;
+import database.DepartmentsTable;
+import database.StaffTable;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
+import javax.swing.DefaultComboBoxModel;
 
 /**
  *
@@ -8,51 +15,149 @@ import java.util.HashMap;
 public class Profile extends javax.swing.JDialog {
 
     private boolean anyFieldEdited;
+    private ArrayList<HashMap<String, String>> departments;
+    private ArrayList<HashMap<String, String>> designations;
 
-    public Profile(java.awt.Frame parent) {
+    private Profile(java.awt.Frame parent) {
         super(parent, true);
         initComponents();
     }
 
-    public void setEmployeeDetails(HashMap<String, String> employee) {
+    public Profile(java.awt.Frame parent, HashMap<String, String> employee) {
+        this(parent);
+
+        Runnable runnable = () -> {
+            loadData();
+            setEmployeeDetails(employee);
+            EditProfileButton.setEnabled(true);
+        };
+        //Execute in another thread, to avoid program from being unresponsive
+        Utility.getExecutorService().execute(runnable);
+    }
+
+    private void loadData() {
+        //oad departments
+        try {
+            departments = DatabaseImpl.getDepartmentsTable();
+        } catch (SQLException ex) {
+            departments = new ArrayList<>();
+        }
+        if (departments.isEmpty()) {
+            departmentComboBox.setModel(new DefaultComboBoxModel(new String[]{"Not Available"}));
+        } else {
+            String deptNames[] = new String[departments.size()];
+            for (int i = 0; i < deptNames.length; i++) {
+                deptNames[i] = departments.get(i).get(DepartmentsTable.NAME.toString());
+            }
+            departmentComboBox.setModel(new DefaultComboBoxModel(deptNames));
+        }
+
+        //load designations
+        try {
+            designations = DatabaseImpl.getDesignationsTable();
+        } catch (SQLException ex) {
+            designations = new ArrayList<>();
+        }
+        if (designations.isEmpty()) {
+            designationsComboBox.setModel(new DefaultComboBoxModel(new String[]{"Not Available"}));
+        } else {
+            String designationsNames[] = new String[designations.size()];
+            for (int i = 0; i < designationsNames.length; i++) {
+                designationsNames[i] = departments.get(i).get(DepartmentsTable.NAME.toString());
+            }
+            designationsComboBox.setModel(new DefaultComboBoxModel(designationsNames));
+        }
+    }
+
+    private String getDepartmentName(String dept_id) {
+        for (HashMap<String, String> department : departments) {
+            if (department.get(DepartmentsTable.DEPARTMENT_ID.toString()).equals(dept_id)) {
+                return department.get(DepartmentsTable.NAME.toString());
+            }
+        }
+        return "";
+    }
+
+    private void setEmployeeDetails(HashMap<String, String> employee) {
 
         CompanysNameLabel1.setText(Utility.getCompanyName());
-        String firstName = employee.get("fname");
-        String lastName = employee.get("lname");
+        String firstName = employee.get(StaffTable.FNAME.toString());
+        String lastName = employee.get(StaffTable.LNAME.toString());
         jLabel28.setText(firstName + " " + lastName + "'s Profile");
         SurnameLabel1.setText(lastName);
         FisrtNameLabel1.setText(firstName);
-        MiddleNameLabel1.setText(employee.get("other_names"));
-        MarritalStatusTestField1.setText(employee.get("marrital_status"));
-        MarritalStatusTestField1.setEditable(false);
-        sexComboBox.getModel().setSelectedItem(employee.get("sex"));
-        sexComboBox.setEnabled(false);
-        
+        MiddleNameLabel1.setText(employee.get(StaffTable.OTHER_NAMES.toString()));
+        mStatusComboBox.setSelectedItem(employee.get(StaffTable.MARRITAL_STATUS.toString()));
+        sexComboBox.setSelectedItem(employee.get(StaffTable.SEX.toString()));
+        departmentComboBox.setSelectedItem(getDepartmentName(StaffTable.DEPARTMENT_ID.toString()));
+        designationsComboBox.setSelectedItem(employee.get(StaffTable.DESIGNATION.toString()));
+        long date = Long.parseLong(employee.get(StaffTable.DATE_JOINED.toString()));
+        DateJoinedLabel1.setText(new Date(date).toString());
+        PhoneNumberLabel1.setText(employee.get(StaffTable.PHONE.toString()));
+        EmployeesEmailLabel1.setText(employee.get(StaffTable.EMAIL.toString()));
+        ResidentialAddressTextArea1.setText(employee.get(StaffTable.RESIDENTIAL_ADDRESS.toString()));
+        PermanentAddressTextArea1.setText(employee.get(StaffTable.PERMANENT_ADDRESS.toString()));
+
     }
 
     private void allowEdit() {
         //Set components editable
-        
+        mStatusComboBox.setEnabled(true);
+        sexComboBox.setEnabled(true);
+        departmentComboBox.setEnabled(true);
+        designationsComboBox.setEnabled(true);
+        ResidentialAddressTextArea1.setEditable(true);
+        PermanentAddressTextArea1.setEditable(true);
+
         EditProfileButton.setText("Update");
         EditProfileButton.setActionCommand("update");
     }
 
+    private HashMap<String, String> getEditedData() {
+        HashMap<String, String> editedFields = new HashMap<>();
+        if(anyFieldEdited){
+            
+        }
+        return editedFields;
+    }
+
     private void saveChanges() {
         if (anyFieldEdited) {
-            boolean fieldsSaved = false;
             //Save Edited Fields
-            
-            if (fieldsSaved) {
-                EditProfileButton.setText("Edit");
-                EditProfileButton.setActionCommand("edit");
-            }
-            
+            EditProfileButton.setEnabled(false);
+            Runnable runnable = () -> {
+                boolean fieldsSaved = DatabaseImpl
+                        .updateEmployee(staffIDLabel.getText(), getEditedData());
+                EditProfileButton.setEnabled(true);
+
+                if (fieldsSaved) {
+                    mStatusComboBox.setEnabled(false);
+                    sexComboBox.setEnabled(false);
+                    departmentComboBox.setEnabled(false);
+                    designationsComboBox.setEnabled(false);
+                    ResidentialAddressTextArea1.setEditable(false);
+                    PermanentAddressTextArea1.setEditable(false);
+
+                    EditProfileButton.setText("Edit");
+                    EditProfileButton.setActionCommand("edit");
+                    anyFieldEdited = false;
+                }
+            };
+            Utility.getExecutorService().execute(runnable);
+
         } else {
+            mStatusComboBox.setEnabled(false);
+            sexComboBox.setEnabled(false);
+            departmentComboBox.setEnabled(false);
+            designationsComboBox.setEnabled(false);
+            ResidentialAddressTextArea1.setEditable(false);
+            PermanentAddressTextArea1.setEditable(false);
+
             EditProfileButton.setText("Edit");
             EditProfileButton.setActionCommand("edit");
         }
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -84,10 +189,12 @@ public class Profile extends javax.swing.JDialog {
         PermanentAddressTextArea1 = new javax.swing.JTextArea();
         EditProfileButton = new javax.swing.JButton();
         ProfileBackButton1 = new javax.swing.JButton();
-        MarritalStatusTestField1 = new javax.swing.JTextField();
         departmentComboBox = new javax.swing.JComboBox();
         sexComboBox = new javax.swing.JComboBox();
-        jComboBox1 = new javax.swing.JComboBox();
+        designationsComboBox = new javax.swing.JComboBox();
+        mStatusComboBox = new javax.swing.JComboBox();
+        jLabel77 = new javax.swing.JLabel();
+        staffIDLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -104,7 +211,7 @@ public class Profile extends javax.swing.JDialog {
 
         jLabel65.setText("Surname:");
 
-        SurnameLabel1.setText("Employee's Suename");
+        SurnameLabel1.setText("Employee's Surname");
 
         FisrtNameLabel1.setText("Employee's Firstname");
 
@@ -138,15 +245,28 @@ public class Profile extends javax.swing.JDialog {
 
         jLabel76.setText("Permanent Address:");
 
+        ResidentialAddressTextArea1.setEditable(false);
         ResidentialAddressTextArea1.setColumns(20);
         ResidentialAddressTextArea1.setRows(5);
+        ResidentialAddressTextArea1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textAreaValueChanged(evt);
+            }
+        });
         jScrollPane8.setViewportView(ResidentialAddressTextArea1);
 
+        PermanentAddressTextArea1.setEditable(false);
         PermanentAddressTextArea1.setColumns(20);
         PermanentAddressTextArea1.setRows(5);
+        PermanentAddressTextArea1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textAreaValueChanged(evt);
+            }
+        });
         jScrollPane9.setViewportView(PermanentAddressTextArea1);
 
         EditProfileButton.setText("Edit");
+        EditProfileButton.setEnabled(false);
         EditProfileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EditProfileButtonActionPerformed(evt);
@@ -154,14 +274,47 @@ public class Profile extends javax.swing.JDialog {
         });
 
         ProfileBackButton1.setText("Ok");
-
-        MarritalStatusTestField1.setText("Single/Married/Divorced");
+        ProfileBackButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProfileBackButton1ActionPerformed(evt);
+            }
+        });
 
         departmentComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        departmentComboBox.setEnabled(false);
+        departmentComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxValueChanged(evt);
+            }
+        });
 
         sexComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "M", "F" }));
+        sexComboBox.setEnabled(false);
+        sexComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxValueChanged(evt);
+            }
+        });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        designationsComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        designationsComboBox.setEnabled(false);
+        designationsComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxValueChanged(evt);
+            }
+        });
+
+        mStatusComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Single", "Married", "Divorced", "Complicated" }));
+        mStatusComboBox.setEnabled(false);
+        mStatusComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxValueChanged(evt);
+            }
+        });
+
+        jLabel77.setText("Staff ID");
+
+        staffIDLabel.setText("Employee's ID");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -172,16 +325,6 @@ public class Profile extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel65, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel66, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FisrtNameLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(MiddleNameLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(SurnameLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(EditProfileButton)
@@ -210,19 +353,26 @@ public class Profile extends javax.swing.JDialog {
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(sexComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(designationsComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel68, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel69, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE))
+                        .addGap(10, 10, 10)
+                        .addComponent(mStatusComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jLabel73, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
-                                .addGap(30, 30, 30))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jLabel68, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(10, 10, 10)))
-                        .addComponent(MarritalStatusTestField1)))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel77, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel65, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel66, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel67, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(FisrtNameLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(MiddleNameLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SurnameLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(staffIDLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -232,7 +382,11 @@ public class Profile extends javax.swing.JDialog {
                 .addComponent(CompanysNameLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel28)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel77)
+                    .addComponent(staffIDLabel))
+                .addGap(1, 1, 1)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel65)
                     .addComponent(SurnameLabel1))
@@ -245,10 +399,10 @@ public class Profile extends javax.swing.JDialog {
                     .addComponent(jLabel67)
                     .addComponent(MiddleNameLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel68)
-                    .addComponent(MarritalStatusTestField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(mStatusComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel69)
                     .addComponent(sexComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -259,7 +413,7 @@ public class Profile extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel71)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(designationsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel72)
@@ -313,47 +467,21 @@ public class Profile extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_EditProfileButtonActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Profile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void comboBoxValueChanged(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxValueChanged
+        // TODO add your handling code here:
+        anyFieldEdited = true;
+    }//GEN-LAST:event_comboBoxValueChanged
 
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                Profile dialog = new Profile(new javax.swing.JFrame());
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
+    private void textAreaValueChanged(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textAreaValueChanged
+        // TODO add your handling code here:
+        anyFieldEdited = true;
+    }//GEN-LAST:event_textAreaValueChanged
+
+    private void ProfileBackButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfileBackButton1ActionPerformed
+        // TODO add your handling code here:
+        saveChanges();
+        setVisible(false);
+    }//GEN-LAST:event_ProfileBackButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CompanysNameLabel1;
@@ -361,7 +489,6 @@ public class Profile extends javax.swing.JDialog {
     private javax.swing.JButton EditProfileButton;
     private javax.swing.JLabel EmployeesEmailLabel1;
     private javax.swing.JLabel FisrtNameLabel1;
-    private javax.swing.JTextField MarritalStatusTestField1;
     private javax.swing.JLabel MiddleNameLabel1;
     private javax.swing.JTextArea PermanentAddressTextArea1;
     private javax.swing.JLabel PhoneNumberLabel1;
@@ -369,7 +496,7 @@ public class Profile extends javax.swing.JDialog {
     private javax.swing.JTextArea ResidentialAddressTextArea1;
     private javax.swing.JLabel SurnameLabel1;
     private javax.swing.JComboBox departmentComboBox;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox designationsComboBox;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
@@ -383,9 +510,12 @@ public class Profile extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JComboBox mStatusComboBox;
     private javax.swing.JComboBox sexComboBox;
+    private javax.swing.JLabel staffIDLabel;
     // End of variables declaration//GEN-END:variables
 }

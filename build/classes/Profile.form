@@ -48,19 +48,6 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel28" max="32767" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jLabel65" max="32767" attributes="0"/>
-                              <Component id="jLabel66" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel67" alignment="0" pref="98" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="FisrtNameLabel1" alignment="1" max="32767" attributes="0"/>
-                              <Component id="MiddleNameLabel1" max="32767" attributes="0"/>
-                              <Component id="SurnameLabel1" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Component id="EditProfileButton" min="-2" max="-2" attributes="0"/>
@@ -95,25 +82,32 @@
                                   <Component id="sexComboBox" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="jComboBox1" max="32767" attributes="0"/>
+                              <Component id="designationsComboBox" max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <Component id="jLabel73" min="-2" pref="168" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="jLabel69" min="-2" pref="98" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jLabel68" max="32767" attributes="0"/>
+                              <Component id="jLabel69" pref="98" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <Component id="mStatusComboBox" min="-2" pref="235" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel73" pref="78" max="32767" attributes="0"/>
-                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel68" max="32767" attributes="0"/>
-                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jLabel77" max="32767" attributes="0"/>
+                              <Component id="jLabel65" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabel66" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabel67" alignment="0" pref="98" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="MarritalStatusTestField1" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="FisrtNameLabel1" alignment="1" max="32767" attributes="0"/>
+                              <Component id="MiddleNameLabel1" max="32767" attributes="0"/>
+                              <Component id="SurnameLabel1" max="32767" attributes="0"/>
+                              <Component id="staffIDLabel" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -127,7 +121,12 @@
                   <Component id="CompanysNameLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel77" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="staffIDLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel65" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="SurnameLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -143,11 +142,11 @@
                       <Component id="MiddleNameLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel68" min="-2" max="-2" attributes="0"/>
-                      <Component id="MarritalStatusTestField1" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel68" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="mStatusComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel69" min="-2" max="-2" attributes="0"/>
                       <Component id="sexComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -160,7 +159,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel71" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="designationsComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -230,7 +229,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="SurnameLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Employee&apos;s Suename"/>
+            <Property name="text" type="java.lang.String" value="Employee&apos;s Surname"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="FisrtNameLabel1">
@@ -322,9 +321,13 @@
           <SubComponents>
             <Component class="javax.swing.JTextArea" name="ResidentialAddressTextArea1">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
               </Properties>
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="textAreaValueChanged"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -337,15 +340,20 @@
           <SubComponents>
             <Component class="javax.swing.JTextArea" name="PermanentAddressTextArea1">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
               </Properties>
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="textAreaValueChanged"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JButton" name="EditProfileButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Edit"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EditProfileButtonActionPerformed"/>
@@ -355,11 +363,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Ok"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="MarritalStatusTestField1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Single/Married/Divorced"/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ProfileBackButton1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="departmentComboBox">
           <Properties>
@@ -371,7 +377,11 @@
                 <StringItem index="3" value="Item 4"/>
               </StringArray>
             </Property>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboBoxValueChanged"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="sexComboBox">
           <Properties>
@@ -381,9 +391,13 @@
                 <StringItem index="1" value="F"/>
               </StringArray>
             </Property>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboBoxValueChanged"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="designationsComboBox">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -393,6 +407,36 @@
                 <StringItem index="3" value="Item 4"/>
               </StringArray>
             </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboBoxValueChanged"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="mStatusComboBox">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="Single"/>
+                <StringItem index="1" value="Married"/>
+                <StringItem index="2" value="Divorced"/>
+                <StringItem index="3" value="Complicated"/>
+              </StringArray>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboBoxValueChanged"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel77">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Staff ID"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="staffIDLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Employee&apos;s ID"/>
           </Properties>
         </Component>
       </SubComponents>

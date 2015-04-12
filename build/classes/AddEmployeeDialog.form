@@ -71,21 +71,19 @@
                               <Component id="jLabel19" alignment="0" min="-2" pref="126" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="NewEmployeeSurname" max="32767" attributes="0"/>
-                              <Component id="NewEmployeeFirstName" max="32767" attributes="0"/>
-                              <Component id="NewEmployeeMiddleName" max="32767" attributes="0"/>
-                              <Component id="NewEmployeeStaffIdTextField" max="32767" attributes="0"/>
-                              <Component id="NewEmployeeEmailTextField" max="32767" attributes="0"/>
-                              <Component id="NewEmployeePhoneNumberTextField" max="32767" attributes="0"/>
-                              <Component id="NewEmployeeDepartmentTextField" max="32767" attributes="0"/>
-                              <Component id="NewEmployeeDesignationTextField" max="32767" attributes="0"/>
-                              <Component id="NewEmployeeLeaveDateTextField" max="32767" attributes="0"/>
-                              <Component id="NewEmployeeMaternityDateTextField" max="32767" attributes="0"/>
-                              <Component id="NewEmployeeNextOfKinTextField" max="32767" attributes="0"/>
-                              <Component id="jTextField16" max="32767" attributes="0"/>
-                              <Component id="NewEmployeeAccountNumberTextField" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="NewEmployeeFirstName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="NewEmployeeMiddleName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="NewEmployeeStaffIdTextField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="NewEmployeeEmailTextField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="NewEmployeePhoneNumberTextField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="NewEmployeeDepartmentTextField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="NewEmployeeDesignationTextField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="NewEmployeeLeaveDateTextField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="NewEmployeeMaternityDateTextField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="NewEmployeeNextOfKinTextField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTextField16" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="NewEmployeeMaleRadioButton" min="-2" pref="71" max="-2" attributes="0"/>
@@ -107,8 +105,10 @@
                                       </Group>
                                       <Component id="NewEmployeeUnspecifiedRadioButton" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="236" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="113" max="32767" attributes="0"/>
                               </Group>
+                              <Component id="NewEmployeeAccountNumberTextField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="NewEmployeeSurname" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
@@ -118,18 +118,18 @@
                           </Group>
                           <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane1" max="32767" attributes="0"/>
                               <Component id="jScrollPane2" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="cancelButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="submitButton" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="AddNewEmployeeCancelButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
-                  <Component id="AddNewEmployeeSubmitButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -234,9 +234,9 @@
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="AddNewEmployeeSubmitButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="AddNewEmployeeCancelButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="submitButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="cancelButton" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -469,15 +469,21 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="AddNewEmployeeSubmitButton">
+        <Component class="javax.swing.JButton" name="submitButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Submit"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="submitButtonActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="AddNewEmployeeCancelButton">
+        <Component class="javax.swing.JButton" name="cancelButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cancel"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="NewEmployeeComplicatedRadioButton">
           <Properties>

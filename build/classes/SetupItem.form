@@ -18,13 +18,13 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="StaffIdCheckBox" min="-2" max="-2" attributes="0"/>
+              <Component id="staffIdCheckBox" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-              <Component id="EmployeesNameLabel" min="-2" pref="165" max="-2" attributes="0"/>
+              <Component id="employeesNameLabel" min="-2" pref="165" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="NameOfDepartmentLabel" min="-2" pref="137" max="-2" attributes="0"/>
+              <Component id="nameOfDepartmentLabel" min="-2" pref="137" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="EmployeesPositionLabel" pref="116" max="32767" attributes="0"/>
+              <Component id="employeesPositionLabel" pref="116" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -32,32 +32,32 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="103" groupAlignment="3" attributes="0">
-              <Component id="NameOfDepartmentLabel" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-              <Component id="EmployeesNameLabel" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-              <Component id="StaffIdCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
-              <Component id="EmployeesPositionLabel" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+              <Component id="nameOfDepartmentLabel" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+              <Component id="employeesNameLabel" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+              <Component id="staffIdCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Component id="employeesPositionLabel" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="EmployeesPositionLabel">
+    <Component class="javax.swing.JLabel" name="employeesPositionLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Designation"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="StaffIdCheckBox">
+    <Component class="javax.swing.JCheckBox" name="staffIdCheckBox">
       <Properties>
         <Property name="text" type="java.lang.String" value="StaffID"/>
         <Property name="iconTextGap" type="int" value="10"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="NameOfDepartmentLabel">
+    <Component class="javax.swing.JLabel" name="nameOfDepartmentLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Department"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="EmployeesNameLabel">
+    <Component class="javax.swing.JLabel" name="employeesNameLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Name of Employee"/>
       </Properties>

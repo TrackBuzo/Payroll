@@ -33,9 +33,10 @@ public class Login extends JDialog {
 
     private Login(Frame owner) {
         super(owner, true);
+        setTitle("Password");
+        setAlwaysOnTop(true);
         this.passwordFile = new File(System.getProperty("user.dir"), "pwordlogger.dat");
         JPanel panel = new JPanel();
-        setTitle("Password");
         panel.add(new JLabel("Enter Password"));
         pField = new JPasswordField(20);
         rpField = new JPasswordField(20);
