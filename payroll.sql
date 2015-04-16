@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2015 at 01:03 PM
+-- Generation Time: Apr 16, 2015 at 09:04 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `staff` (
   `email` text,
   `marrital_status` enum('single','married','divorced','complicated') DEFAULT NULL,
   `picture` text,
-  `bank` varchar(70) DEFAULT NULL,
+  `bank` enum('FBN','GTB','FCMB','UBA','FIDELITY') DEFAULT NULL,
   `account_no` int(11) DEFAULT NULL,
   `date_joined` date DEFAULT NULL,
   `sex` char(1) DEFAULT NULL,

@@ -57,7 +57,6 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
         NewEmployeeLeaveDateTextField = new javax.swing.JTextField();
         NewEmployeeMaternityDateTextField = new javax.swing.JTextField();
         NewEmployeeNextOfKinTextField = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
         NewEmployeeAccountNumberTextField = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         NewEmployeeMaleRadioButton = new javax.swing.JRadioButton();
@@ -75,6 +74,7 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
         submitButton = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
         NewEmployeeComplicatedRadioButton = new javax.swing.JRadioButton();
+        jComboBox1 = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -137,8 +137,6 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
 
         NewEmployeeNextOfKinTextField.setText("Name of Employee's Next of Kin");
 
-        jTextField16.setText("Bank's Name");
-
         NewEmployeeAccountNumberTextField.setText("Employee's Bank Account Number");
 
         jLabel19.setText("Accouunt Number:");
@@ -188,6 +186,8 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
 
         NewEmployeeComplicatedRadioButton.setText("Complicated");
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "FBN", "GTB", "FCMB", "UBA", "FIDELITY" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -228,7 +228,8 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
                             .addComponent(NewEmployeeLeaveDateTextField, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(NewEmployeeMaternityDateTextField, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(NewEmployeeNextOfKinTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField16, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NewEmployeeAccountNumberTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NewEmployeeSurname)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -247,8 +248,7 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
                                         .addComponent(NewEmployeeComplicatedRadioButton))
                                     .addComponent(NewEmployeeUnspecifiedRadioButton))
                                 .addGap(0, 113, Short.MAX_VALUE))
-                            .addComponent(NewEmployeeAccountNumberTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NewEmployeeSurname)))
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -328,8 +328,8 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
                     .addComponent(jLabel16))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18))
+                    .addComponent(jLabel18)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
@@ -415,6 +415,7 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
     private javax.swing.JRadioButton NewEmployeeUnspecifiedRadioButton;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton cancelButton;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -436,7 +437,6 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField16;
     private javax.swing.JButton submitButton;
     // End of variables declaration//GEN-END:variables
 }

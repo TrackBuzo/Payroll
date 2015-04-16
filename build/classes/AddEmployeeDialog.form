@@ -82,7 +82,8 @@
                               <Component id="NewEmployeeLeaveDateTextField" alignment="0" max="32767" attributes="0"/>
                               <Component id="NewEmployeeMaternityDateTextField" alignment="0" max="32767" attributes="0"/>
                               <Component id="NewEmployeeNextOfKinTextField" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextField16" alignment="0" max="32767" attributes="0"/>
+                              <Component id="NewEmployeeAccountNumberTextField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="NewEmployeeSurname" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
@@ -107,8 +108,7 @@
                                   </Group>
                                   <EmptySpace min="0" pref="113" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="NewEmployeeAccountNumberTextField" alignment="0" max="32767" attributes="0"/>
-                              <Component id="NewEmployeeSurname" max="32767" attributes="0"/>
+                              <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
@@ -211,8 +211,8 @@
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextField16" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -381,11 +381,6 @@
             <Property name="text" type="java.lang.String" value="Name of Employee&apos;s Next of Kin"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField16">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Bank&apos;s Name"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="NewEmployeeAccountNumberTextField">
           <Properties>
             <Property name="text" type="java.lang.String" value="Employee&apos;s Bank Account Number"/>
@@ -488,6 +483,19 @@
         <Component class="javax.swing.JRadioButton" name="NewEmployeeComplicatedRadioButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Complicated"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox1">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="5">
+                <StringItem index="0" value="FBN"/>
+                <StringItem index="1" value="GTB"/>
+                <StringItem index="2" value="FCMB"/>
+                <StringItem index="3" value="UBA"/>
+                <StringItem index="4" value="FIDELITY"/>
+              </StringArray>
+            </Property>
           </Properties>
         </Component>
       </SubComponents>
