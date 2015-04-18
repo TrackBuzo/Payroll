@@ -1,8 +1,11 @@
 
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.Window;
+import java.awt.print.PrinterJob;
+import java.util.Calendar;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -43,5 +46,20 @@ public class Utility {
         y = y < 0 ? 0 : y;
 
         child.setLocation(x, y);
+    }
+    
+    public static boolean printComponent(Component component){
+        PrinterJob job = PrinterJob.getPrinterJob();
+        return false;
+    }
+    
+    public static boolean isOnMaternityLeave(String staffId){
+        //Check if on maternity leave
+        return false;
+    }
+    
+    public static boolean isDecember(){
+        Calendar c = Calendar.getInstance();
+        return c.get(Calendar.MONTH) == Calendar.DECEMBER;
     }
 }
