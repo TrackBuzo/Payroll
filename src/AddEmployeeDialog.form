@@ -71,44 +71,25 @@
                               <Component id="jLabel19" alignment="0" min="-2" pref="126" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="NewEmployeeFirstName" alignment="0" max="32767" attributes="0"/>
                               <Component id="NewEmployeeMiddleName" alignment="0" max="32767" attributes="0"/>
                               <Component id="NewEmployeeStaffIdTextField" alignment="0" max="32767" attributes="0"/>
                               <Component id="NewEmployeeEmailTextField" alignment="0" max="32767" attributes="0"/>
                               <Component id="NewEmployeePhoneNumberTextField" alignment="0" max="32767" attributes="0"/>
-                              <Component id="NewEmployeeDepartmentTextField" alignment="0" max="32767" attributes="0"/>
-                              <Component id="NewEmployeeDesignationTextField" alignment="0" max="32767" attributes="0"/>
                               <Component id="NewEmployeeLeaveDateTextField" alignment="0" max="32767" attributes="0"/>
                               <Component id="NewEmployeeMaternityDateTextField" alignment="0" max="32767" attributes="0"/>
                               <Component id="NewEmployeeNextOfKinTextField" alignment="0" max="32767" attributes="0"/>
-                              <Component id="NewEmployeeAccountNumberTextField" alignment="0" max="32767" attributes="0"/>
-                              <Component id="NewEmployeeSurname" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="NewEmployeeMaleRadioButton" min="-2" pref="71" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="NewEmployeeFemaleRadioButton" min="-2" pref="69" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="NewEmployeeMarriedRadioButton" min="-2" pref="71" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                          <Component id="NewEmployeeSingleRadioButton" min="-2" pref="67" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="NewEmployeeDivorcedRadioButon" min="-2" pref="81" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="NewEmployeeComplicatedRadioButton" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="NewEmployeeUnspecifiedRadioButton" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="0" pref="113" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="NewEmployeeAccountNumberTextField" alignment="0" pref="421" max="32767" attributes="0"/>
+                              <Component id="NewEmployeeSurname" alignment="1" max="32767" attributes="0"/>
                               <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jComboBox3" max="32767" attributes="0"/>
+                              <Component id="jComboBox4" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="jComboBox5" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
@@ -153,21 +134,14 @@
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="NewEmployeeMaleRadioButton" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
-                          <Component id="NewEmployeeFemaleRadioButton" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
-                          <Component id="NewEmployeeUnspecifiedRadioButton" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="NewEmployeeMarriedRadioButton" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
-                      <Component id="NewEmployeeSingleRadioButton" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
-                      <Component id="NewEmployeeDivorcedRadioButon" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
-                      <Component id="NewEmployeeComplicatedRadioButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBox3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -186,13 +160,13 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="NewEmployeeDepartmentTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBox4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="NewEmployeeDesignationTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBox5" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -356,16 +330,6 @@
             <Property name="text" type="java.lang.String" value="Phone Number"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="NewEmployeeDepartmentTextField">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Employee&apos;s Department"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="NewEmployeeDesignationTextField">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Employee&apos;s Position"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="NewEmployeeLeaveDateTextField">
           <Properties>
             <Property name="text" type="java.lang.String" value="Leave date"/>
@@ -389,39 +353,6 @@
         <Component class="javax.swing.JLabel" name="jLabel19">
           <Properties>
             <Property name="text" type="java.lang.String" value="Accouunt Number:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="NewEmployeeMaleRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Male"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="NewEmployeeFemaleRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Female"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NewEmployeeFemaleRadioButtonActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="NewEmployeeUnspecifiedRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Unspecified"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="NewEmployeeMarriedRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Married"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="NewEmployeeSingleRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Single"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="NewEmployeeDivorcedRadioButon">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Divorced"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel20">
@@ -480,11 +411,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="NewEmployeeComplicatedRadioButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Complicated"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JComboBox" name="jComboBox1">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
@@ -494,6 +420,55 @@
                 <StringItem index="2" value="FCMB"/>
                 <StringItem index="3" value="UBA"/>
                 <StringItem index="4" value="FIDELITY"/>
+              </StringArray>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox2">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="2">
+                <StringItem index="0" value="M"/>
+                <StringItem index="1" value="F"/>
+              </StringArray>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox3">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="single"/>
+                <StringItem index="1" value="married"/>
+                <StringItem index="2" value="divorced"/>
+                <StringItem index="3" value="complicated"/>
+              </StringArray>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox4">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="Item 1"/>
+                <StringItem index="1" value="Item 2"/>
+                <StringItem index="2" value="Item 3"/>
+                <StringItem index="3" value="Item 4"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox4ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox5">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="Item 1"/>
+                <StringItem index="1" value="Item 2"/>
+                <StringItem index="2" value="Item 3"/>
+                <StringItem index="3" value="Item 4"/>
               </StringArray>
             </Property>
           </Properties>

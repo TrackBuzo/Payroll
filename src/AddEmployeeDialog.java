@@ -52,19 +52,11 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
         NewEmployeeStaffIdTextField = new javax.swing.JTextField();
         NewEmployeeEmailTextField = new javax.swing.JTextField();
         NewEmployeePhoneNumberTextField = new javax.swing.JTextField();
-        NewEmployeeDepartmentTextField = new javax.swing.JTextField();
-        NewEmployeeDesignationTextField = new javax.swing.JTextField();
         NewEmployeeLeaveDateTextField = new javax.swing.JTextField();
         NewEmployeeMaternityDateTextField = new javax.swing.JTextField();
         NewEmployeeNextOfKinTextField = new javax.swing.JTextField();
         NewEmployeeAccountNumberTextField = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        NewEmployeeMaleRadioButton = new javax.swing.JRadioButton();
-        NewEmployeeFemaleRadioButton = new javax.swing.JRadioButton();
-        NewEmployeeUnspecifiedRadioButton = new javax.swing.JRadioButton();
-        NewEmployeeMarriedRadioButton = new javax.swing.JRadioButton();
-        NewEmployeeSingleRadioButton = new javax.swing.JRadioButton();
-        NewEmployeeDivorcedRadioButon = new javax.swing.JRadioButton();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -73,8 +65,11 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
         NewEmployeePermanentAddress = new javax.swing.JTextArea();
         submitButton = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
-        NewEmployeeComplicatedRadioButton = new javax.swing.JRadioButton();
         jComboBox1 = new javax.swing.JComboBox();
+        jComboBox2 = new javax.swing.JComboBox();
+        jComboBox3 = new javax.swing.JComboBox();
+        jComboBox4 = new javax.swing.JComboBox();
+        jComboBox5 = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -127,10 +122,6 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
 
         NewEmployeePhoneNumberTextField.setText("Phone Number");
 
-        NewEmployeeDepartmentTextField.setText("Employee's Department");
-
-        NewEmployeeDesignationTextField.setText("Employee's Position");
-
         NewEmployeeLeaveDateTextField.setText("Leave date");
 
         NewEmployeeMaternityDateTextField.setText("For Female Employeesn alone");
@@ -140,23 +131,6 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
         NewEmployeeAccountNumberTextField.setText("Employee's Bank Account Number");
 
         jLabel19.setText("Accouunt Number:");
-
-        NewEmployeeMaleRadioButton.setText("Male");
-
-        NewEmployeeFemaleRadioButton.setText("Female");
-        NewEmployeeFemaleRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NewEmployeeFemaleRadioButtonActionPerformed(evt);
-            }
-        });
-
-        NewEmployeeUnspecifiedRadioButton.setText("Unspecified");
-
-        NewEmployeeMarriedRadioButton.setText("Married");
-
-        NewEmployeeSingleRadioButton.setText("Single");
-
-        NewEmployeeDivorcedRadioButon.setText("Divorced");
 
         jLabel20.setText("Residential Address:");
 
@@ -184,9 +158,20 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
             }
         });
 
-        NewEmployeeComplicatedRadioButton.setText("Complicated");
-
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "FBN", "GTB", "FCMB", "UBA", "FIDELITY" }));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "M", "F" }));
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "single", "married", "divorced", "complicated" }));
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox4ActionPerformed(evt);
+            }
+        });
+
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -217,38 +202,24 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
                             .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(NewEmployeeFirstName, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NewEmployeeMiddleName, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NewEmployeeStaffIdTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NewEmployeeEmailTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NewEmployeePhoneNumberTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NewEmployeeDepartmentTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NewEmployeeDesignationTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NewEmployeeLeaveDateTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NewEmployeeMaternityDateTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NewEmployeeNextOfKinTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NewEmployeeAccountNumberTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NewEmployeeSurname)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(NewEmployeeMaleRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(NewEmployeeFemaleRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(NewEmployeeMarriedRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(2, 2, 2)
-                                        .addComponent(NewEmployeeSingleRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(NewEmployeeDivorcedRadioButon, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NewEmployeeComplicatedRadioButton))
-                                    .addComponent(NewEmployeeUnspecifiedRadioButton))
-                                .addGap(0, 113, Short.MAX_VALUE))
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NewEmployeeFirstName)
+                            .addComponent(NewEmployeeMiddleName)
+                            .addComponent(NewEmployeeStaffIdTextField)
+                            .addComponent(NewEmployeeEmailTextField)
+                            .addComponent(NewEmployeePhoneNumberTextField)
+                            .addComponent(NewEmployeeLeaveDateTextField)
+                            .addComponent(NewEmployeeMaternityDateTextField)
+                            .addComponent(NewEmployeeNextOfKinTextField)
+                            .addComponent(NewEmployeeAccountNumberTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
+                            .addComponent(NewEmployeeSurname, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jComboBox5, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -281,19 +252,13 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
                     .addComponent(NewEmployeeMiddleName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(NewEmployeeMaleRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(NewEmployeeFemaleRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(NewEmployeeUnspecifiedRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel8)
-                    .addComponent(NewEmployeeMarriedRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NewEmployeeSingleRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NewEmployeeDivorcedRadioButon, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NewEmployeeComplicatedRadioButton))
+                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NewEmployeeStaffIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -308,12 +273,12 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NewEmployeeDepartmentTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12))
+                    .addComponent(jLabel12)
+                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NewEmployeeDesignationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel13)
+                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NewEmployeeLeaveDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -366,10 +331,6 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void NewEmployeeFemaleRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewEmployeeFemaleRadioButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NewEmployeeFemaleRadioButtonActionPerformed
-
     private void NewEmployeeStaffIdTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewEmployeeStaffIdTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NewEmployeeStaffIdTextFieldActionPerformed
@@ -391,31 +352,30 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_submitButtonActionPerformed
 
+    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox4ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField NewEmployeeAccountNumberTextField;
-    private javax.swing.JRadioButton NewEmployeeComplicatedRadioButton;
-    private javax.swing.JTextField NewEmployeeDepartmentTextField;
-    private javax.swing.JTextField NewEmployeeDesignationTextField;
-    private javax.swing.JRadioButton NewEmployeeDivorcedRadioButon;
     private javax.swing.JTextField NewEmployeeEmailTextField;
-    private javax.swing.JRadioButton NewEmployeeFemaleRadioButton;
     private javax.swing.JTextField NewEmployeeFirstName;
     private javax.swing.JTextField NewEmployeeLeaveDateTextField;
-    private javax.swing.JRadioButton NewEmployeeMaleRadioButton;
-    private javax.swing.JRadioButton NewEmployeeMarriedRadioButton;
     private javax.swing.JTextField NewEmployeeMaternityDateTextField;
     private javax.swing.JTextField NewEmployeeMiddleName;
     private javax.swing.JTextField NewEmployeeNextOfKinTextField;
     private javax.swing.JTextArea NewEmployeePermanentAddress;
     private javax.swing.JTextField NewEmployeePhoneNumberTextField;
     private javax.swing.JTextArea NewEmployeeResidentialAddresssTextArea;
-    private javax.swing.JRadioButton NewEmployeeSingleRadioButton;
     private javax.swing.JTextField NewEmployeeStaffIdTextField;
     private javax.swing.JTextField NewEmployeeSurname;
-    private javax.swing.JRadioButton NewEmployeeUnspecifiedRadioButton;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton cancelButton;
     private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JComboBox jComboBox3;
+    private javax.swing.JComboBox jComboBox4;
+    private javax.swing.JComboBox jComboBox5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
