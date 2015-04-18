@@ -76,6 +76,19 @@ public class DatabaseImpl {
         return table;
     }
 
+    public static HashMap<String, String> getStaff(String id) throws SQLException {
+        String query = "select * from staff where " + StaffTable.STAFF_ID + " = '" + id + "'";
+        ResultSet rs = executeQuery(query);
+        ResultSetMetaData metaData = rs.getMetaData();
+        HashMap<String, String> employee = new HashMap<>();
+        if (rs.next()) {
+            for (int i = 1; i <= metaData.getColumnCount(); i++) {
+                employee.put(metaData.getColumnLabel(i), rs.getString(i));
+            }
+        }
+        return employee;
+    }
+
     public static ArrayList<HashMap<String, String>> getDepartmentsTable() throws SQLException {
         String query = "select * from departments";
         ResultSet rs = executeQuery(query);
@@ -89,6 +102,19 @@ public class DatabaseImpl {
             table.add(department);
         }
         return table;
+    }
+
+    public static HashMap<String, String> getDepartment(String id) throws SQLException {
+        String query = "select * from departments where " + DepartmentsTable.DEPARTMENT_ID + " = '" + id + "'";
+        ResultSet rs = executeQuery(query);
+        ResultSetMetaData metaData = rs.getMetaData();
+        HashMap<String, String> department = new HashMap<>();
+        if (rs.next()) {
+            for (int i = 1; i <= metaData.getColumnCount(); i++) {
+                department.put(metaData.getColumnLabel(i), rs.getString(i));
+            }
+        }
+        return department;
     }
 
     public static ArrayList<HashMap<String, String>> getDesignationsTable() throws SQLException {
@@ -106,6 +132,19 @@ public class DatabaseImpl {
         return table;
     }
 
+    public static HashMap<String, String> getDesignation(String name) throws SQLException {
+        String query = "select * from designations where " + DesignationsTable.NAME + " = '" + name + "'";
+        ResultSet rs = executeQuery(query);
+        ResultSetMetaData metaData = rs.getMetaData();
+        HashMap<String, String> pay = new HashMap<>();
+        if (rs.next()) {
+            for (int i = 1; i <= metaData.getColumnCount(); i++) {
+                pay.put(metaData.getColumnLabel(i), rs.getString(i));
+            }
+        }
+        return pay;
+    }
+
     public static ArrayList<HashMap<String, String>> getPaymentsTable() throws SQLException {
         String query = "select * from payments";
         ResultSet rs = executeQuery(query);
@@ -119,6 +158,20 @@ public class DatabaseImpl {
             table.add(payment);
         }
         return table;
+    }
+
+    public static HashMap<String, String> getPayment(String staffId, String dateOfPayment) throws SQLException {
+        String query = "select * from payments where " + PaymentsTable.STAFF_ID + " = '" + staffId + "' "
+                + "and " + PaymentsTable.DATE_OF_PAYMENT + " = '" + dateOfPayment + "'";
+        ResultSet rs = executeQuery(query);
+        ResultSetMetaData metaData = rs.getMetaData();
+        HashMap<String, String> payment = new HashMap<>();
+        if (rs.next()) {
+            for (int i = 1; i <= metaData.getColumnCount(); i++) {
+                payment.put(metaData.getColumnLabel(i), rs.getString(i));
+            }
+        }
+        return payment;
     }
 
     public static boolean addEmployee(HashMap<String, String> employee) {
