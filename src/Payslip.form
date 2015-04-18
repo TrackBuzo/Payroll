@@ -47,18 +47,20 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="CompanyNameLabel" alignment="1" max="32767" attributes="0"/>
-                      <Component id="PayAdviceforMonthYear" alignment="0" max="32767" attributes="0"/>
+                      <Component id="payAdviceforMonthYear" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel15" min="-2" pref="104" max="-2" attributes="0"/>
                               <Component id="jLabel17" min="-2" pref="104" max="-2" attributes="0"/>
                               <Component id="jLabel19" min="-2" pref="104" max="-2" attributes="0"/>
+                              <Component id="jLabel20" min="-2" pref="104" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="LeaveAllowanceAmountLabel" alignment="0" max="32767" attributes="0"/>
-                              <Component id="DecemberWelfareLabel" alignment="1" max="32767" attributes="0"/>
-                              <Component id="HouseAllowanceAmountLabel" alignment="1" max="32767" attributes="0"/>
+                              <Component id="leave" alignment="0" max="32767" attributes="0"/>
+                              <Component id="decemberWelfare" alignment="1" max="32767" attributes="0"/>
+                              <Component id="house" alignment="1" max="32767" attributes="0"/>
+                              <Component id="maternity" alignment="1" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -68,19 +70,19 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="TaxAmountLabel" max="32767" attributes="0"/>
-                              <Component id="PensionAmountLabel" max="32767" attributes="0"/>
+                              <Component id="taxAmount" max="32767" attributes="0"/>
+                              <Component id="pensionAmount" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel21" min="-2" pref="104" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="TotalEarningsLabel" max="32767" attributes="0"/>
+                          <Component id="totalEarnings" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="jLabel13" min="-2" pref="104" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="BasicPayAmountLabel" max="32767" attributes="0"/>
+                          <Component id="basicPay" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -92,10 +94,10 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="PayPointLabel" max="32767" attributes="0"/>
-                              <Component id="EmployeesDesignationLabel" max="32767" attributes="0"/>
-                              <Component id="EmployeesDepartmentLabel" max="32767" attributes="0"/>
-                              <Component id="EmployeesNameLabel" max="32767" attributes="0"/>
+                              <Component id="payPoint" max="32767" attributes="0"/>
+                              <Component id="employeesDesignation" max="32767" attributes="0"/>
+                              <Component id="employeeDepartment" max="32767" attributes="0"/>
+                              <Component id="employeesName" max="32767" attributes="0"/>
                               <Component id="jLabel12" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -106,8 +108,8 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="TotalDeductionLabel" max="32767" attributes="0"/>
-                              <Component id="NetPayAmountLabel" max="32767" attributes="0"/>
+                              <Component id="totalDeductionAmount" max="32767" attributes="0"/>
+                              <Component id="netPayAmount" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -120,25 +122,25 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="CompanyNameLabel" pref="25" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PayAdviceforMonthYear" max="-2" attributes="0"/>
+                  <Component id="payAdviceforMonthYear" max="-2" attributes="0"/>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="EmployeesNameLabel" max="32767" attributes="0"/>
+                      <Component id="employeesName" max="32767" attributes="0"/>
                       <Component id="jLabel3" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="EmployeesDepartmentLabel" alignment="3" max="-2" attributes="0"/>
+                      <Component id="employeeDepartment" alignment="3" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="EmployeesDesignationLabel" alignment="3" max="-2" attributes="0"/>
+                      <Component id="employeesDesignation" alignment="3" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="PayPointLabel" alignment="3" max="-2" attributes="0"/>
+                      <Component id="payPoint" alignment="3" max="-2" attributes="0"/>
                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -152,47 +154,52 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="BasicPayAmountLabel" alignment="3" max="-2" attributes="0"/>
+                      <Component id="basicPay" alignment="3" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="HouseAllowanceAmountLabel" alignment="3" max="-2" attributes="0"/>
+                      <Component id="house" alignment="3" max="-2" attributes="0"/>
                       <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="LeaveAllowanceAmountLabel" alignment="3" max="-2" attributes="0"/>
+                      <Component id="leave" alignment="3" max="-2" attributes="0"/>
                       <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="DecemberWelfareLabel" alignment="3" max="-2" attributes="0"/>
+                      <Component id="decemberWelfare" alignment="3" max="-2" attributes="0"/>
                       <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="maternity" alignment="3" max="-2" attributes="0"/>
+                      <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jLabel21" pref="28" max="32767" attributes="0"/>
-                      <Component id="TotalEarningsLabel" max="32767" attributes="0"/>
+                      <Component id="totalEarnings" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TaxAmountLabel" alignment="3" max="-2" attributes="0"/>
+                      <Component id="taxAmount" alignment="3" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="PensionAmountLabel" alignment="3" max="-2" attributes="0"/>
+                      <Component id="pensionAmount" alignment="3" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jLabel25" pref="31" max="32767" attributes="0"/>
-                      <Component id="TotalDeductionLabel" max="32767" attributes="0"/>
+                      <Component id="totalDeductionAmount" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="NetPayAmountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="netPayAmount" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -208,9 +215,11 @@
             <Property name="text" type="java.lang.String" value="Company Name"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="PayAdviceforMonthYear">
+        <Component class="javax.swing.JLabel" name="payAdviceforMonthYear">
           <Properties>
-            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="11" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Pay Advice for &quot;month&quot; &quot;year&quot;"/>
           </Properties>
         </Component>
@@ -219,12 +228,12 @@
             <Property name="text" type="java.lang.String" value="Name:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="EmployeesNameLabel">
+        <Component class="javax.swing.JLabel" name="employeesName">
           <Properties>
             <Property name="text" type="java.lang.String" value="Employee&apos;s Fullname"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="EmployeesDepartmentLabel">
+        <Component class="javax.swing.JLabel" name="employeeDepartment">
           <Properties>
             <Property name="text" type="java.lang.String" value="Employee&apos;s Department"/>
           </Properties>
@@ -234,7 +243,7 @@
             <Property name="text" type="java.lang.String" value="Department:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="EmployeesDesignationLabel">
+        <Component class="javax.swing.JLabel" name="employeesDesignation">
           <Properties>
             <Property name="text" type="java.lang.String" value="Employee&apos;s Position"/>
           </Properties>
@@ -249,18 +258,24 @@
             <Property name="text" type="java.lang.String" value="Pay point:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="PayPointLabel">
+        <Component class="javax.swing.JLabel" name="payPoint">
           <Properties>
             <Property name="text" type="java.lang.String" value="Employee&apos;s Pay Point (Acc no.:272528457235)"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel11">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="11" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="PAY ITEM"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel12">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="11" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="AMOUNT"/>
           </Properties>
         </Component>
@@ -269,7 +284,7 @@
             <Property name="text" type="java.lang.String" value="Basic Pay"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="BasicPayAmountLabel">
+        <Component class="javax.swing.JLabel" name="basicPay">
           <Properties>
             <Property name="text" type="java.lang.String" value="Amount"/>
           </Properties>
@@ -279,7 +294,7 @@
             <Property name="text" type="java.lang.String" value="House Allowance"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="HouseAllowanceAmountLabel">
+        <Component class="javax.swing.JLabel" name="house">
           <Properties>
             <Property name="text" type="java.lang.String" value="Amount"/>
           </Properties>
@@ -289,7 +304,7 @@
             <Property name="text" type="java.lang.String" value="Leave Allowance"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="LeaveAllowanceAmountLabel">
+        <Component class="javax.swing.JLabel" name="leave">
           <Properties>
             <Property name="text" type="java.lang.String" value="Amount"/>
           </Properties>
@@ -299,7 +314,7 @@
             <Property name="text" type="java.lang.String" value="December Welfare"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="DecemberWelfareLabel">
+        <Component class="javax.swing.JLabel" name="decemberWelfare">
           <Properties>
             <Property name="text" type="java.lang.String" value="Amount"/>
           </Properties>
@@ -309,7 +324,7 @@
             <Property name="text" type="java.lang.String" value="Total Earnings:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="TotalEarningsLabel">
+        <Component class="javax.swing.JLabel" name="totalEarnings">
           <Properties>
             <Property name="text" type="java.lang.String" value="Total of B+ H + L+ D"/>
           </Properties>
@@ -329,17 +344,17 @@
             <Property name="text" type="java.lang.String" value="Total Deduction:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="TaxAmountLabel">
+        <Component class="javax.swing.JLabel" name="taxAmount">
           <Properties>
             <Property name="text" type="java.lang.String" value="Amount"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="PensionAmountLabel">
+        <Component class="javax.swing.JLabel" name="pensionAmount">
           <Properties>
             <Property name="text" type="java.lang.String" value="Amount"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="TotalDeductionLabel">
+        <Component class="javax.swing.JLabel" name="totalDeductionAmount">
           <Properties>
             <Property name="text" type="java.lang.String" value="Tax + Pension"/>
           </Properties>
@@ -349,7 +364,17 @@
             <Property name="text" type="java.lang.String" value="NETPAY:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="NetPayAmountLabel">
+        <Component class="javax.swing.JLabel" name="netPayAmount">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Amount"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel20">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Maternity Allowance"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="maternity">
           <Properties>
             <Property name="text" type="java.lang.String" value="Amount"/>
           </Properties>
@@ -362,7 +387,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="349" max="32767" attributes="0"/>
+                  <EmptySpace pref="172" max="32767" attributes="0"/>
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   <Component id="jButton2" min="-2" max="-2" attributes="0"/>
@@ -396,6 +421,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Cancel"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
