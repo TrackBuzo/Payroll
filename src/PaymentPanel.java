@@ -24,11 +24,11 @@ public class PaymentPanel extends javax.swing.JPanel {
 
         buttonGroup = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        ContinueButton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        continueButton = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        AllEmployeesRadioButton = new javax.swing.JRadioButton();
-        ByDepartmentRadioButton = new javax.swing.JRadioButton();
+        allEmployeesRadioButton = new javax.swing.JRadioButton();
+        byDepartmentRadioButton = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
 
@@ -36,12 +36,17 @@ public class PaymentPanel extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        ContinueButton.setText("Continue");
-
-        jButton1.setText("Back");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        continueButton.setText("Continue");
+        continueButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                continueButtonActionPerformed(evt);
+            }
+        });
+
+        backButton.setText("Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
             }
         });
 
@@ -51,9 +56,9 @@ public class PaymentPanel extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(425, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(backButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ContinueButton)
+                .addComponent(continueButton)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -61,19 +66,19 @@ public class PaymentPanel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ContinueButton)
-                    .addComponent(jButton1))
+                    .addComponent(continueButton)
+                    .addComponent(backButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        buttonGroup.add(AllEmployeesRadioButton);
-        AllEmployeesRadioButton.setText("All Employees");
+        buttonGroup.add(allEmployeesRadioButton);
+        allEmployeesRadioButton.setText("All Employees");
 
-        buttonGroup.add(ByDepartmentRadioButton);
-        ByDepartmentRadioButton.setText("By Deparments");
-        ByDepartmentRadioButton.setOpaque(false);
+        buttonGroup.add(byDepartmentRadioButton);
+        byDepartmentRadioButton.setText("By Deparments");
+        byDepartmentRadioButton.setOpaque(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -82,17 +87,17 @@ public class PaymentPanel extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AllEmployeesRadioButton)
-                    .addComponent(ByDepartmentRadioButton))
+                    .addComponent(allEmployeesRadioButton)
+                    .addComponent(byDepartmentRadioButton))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addComponent(AllEmployeesRadioButton)
+                .addComponent(allEmployeesRadioButton)
                 .addGap(32, 32, 32)
-                .addComponent(ByDepartmentRadioButton)
+                .addComponent(byDepartmentRadioButton)
                 .addContainerGap(329, Short.MAX_VALUE))
         );
 
@@ -123,18 +128,22 @@ public class PaymentPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
         MainFrame.getInstance().showSetupPanel();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_backButtonActionPerformed
 
+    private void continueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueButtonActionPerformed
+        // TODO add your handling code here:
+        MainFrame.getInstance().showBankVoucherPanel();
+    }//GEN-LAST:event_continueButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton AllEmployeesRadioButton;
-    private javax.swing.JRadioButton ByDepartmentRadioButton;
-    private javax.swing.JButton ContinueButton;
+    private javax.swing.JRadioButton allEmployeesRadioButton;
+    private javax.swing.JButton backButton;
     private javax.swing.ButtonGroup buttonGroup;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JRadioButton byDepartmentRadioButton;
+    private javax.swing.JButton continueButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

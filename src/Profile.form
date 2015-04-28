@@ -50,9 +50,9 @@
                       <Component id="jLabel28" max="32767" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="EditProfileButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="editProfileButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="ProfileBackButton1" min="-2" max="-2" attributes="0"/>
+                          <Component id="okButton" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -65,9 +65,9 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jScrollPane8" alignment="1" max="32767" attributes="0"/>
                               <Component id="jScrollPane9" alignment="1" pref="241" max="32767" attributes="0"/>
-                              <Component id="PhoneNumberLabel1" alignment="1" max="32767" attributes="0"/>
-                              <Component id="EmployeesEmailLabel1" max="32767" attributes="0"/>
-                              <Component id="DateJoinedLabel1" max="32767" attributes="0"/>
+                              <Component id="phoneNumberLabel1" alignment="1" max="32767" attributes="0"/>
+                              <Component id="emailLabel1" max="32767" attributes="0"/>
+                              <Component id="dateJoinedLabel1" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -77,8 +77,8 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="departmentalLabel" max="32767" attributes="0"/>
-                              <Component id="designationLabel" max="32767" attributes="0"/>
+                              <Component id="departmentComboBox" max="32767" attributes="0"/>
+                              <Component id="designationsComboBox" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
@@ -100,12 +100,15 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="marritalStatusLabel" max="32767" attributes="0"/>
-                              <Component id="FisrtNameLabel1" alignment="1" max="32767" attributes="0"/>
-                              <Component id="MiddleNameLabel1" max="32767" attributes="0"/>
-                              <Component id="SurnameLabel1" max="32767" attributes="0"/>
+                              <Component id="fisrtNameLabel1" alignment="1" max="32767" attributes="0"/>
+                              <Component id="middleNameLabel1" max="32767" attributes="0"/>
+                              <Component id="surnameLabel1" max="32767" attributes="0"/>
                               <Component id="staffIDLabel" max="32767" attributes="0"/>
-                              <Component id="sexLabel" alignment="0" max="32767" attributes="0"/>
+                              <Component id="mStatusComboBox" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="sexComboBox" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
@@ -128,56 +131,51 @@
                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel65" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="SurnameLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="surnameLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel66" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="FisrtNameLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="fisrtNameLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel67" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="MiddleNameLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="middleNameLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel68" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="marritalStatusLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="mStatusComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel69" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="sexLabel" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel69" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="sexComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel70" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="departmentalLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="departmentComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel71" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="designationLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="designationsComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel72" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="DateJoinedLabel1" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                      <Component id="dateJoinedLabel1" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="PhoneNumberLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="phoneNumberLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel73" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="EmployeesEmailLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="emailLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel74" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -196,8 +194,8 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="ProfileBackButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="EditProfileButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="okButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="editProfileButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -231,12 +229,12 @@
             <Property name="text" type="java.lang.String" value="Surname:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="SurnameLabel1">
+        <Component class="javax.swing.JLabel" name="surnameLabel1">
           <Properties>
             <Property name="text" type="java.lang.String" value="Employee&apos;s Surname"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="FisrtNameLabel1">
+        <Component class="javax.swing.JLabel" name="fisrtNameLabel1">
           <Properties>
             <Property name="text" type="java.lang.String" value="Employee&apos;s Firstname"/>
           </Properties>
@@ -246,7 +244,7 @@
             <Property name="text" type="java.lang.String" value="First Name:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="MiddleNameLabel1">
+        <Component class="javax.swing.JLabel" name="middleNameLabel1">
           <Properties>
             <Property name="text" type="java.lang.String" value="Employee&apos;s MiddleName"/>
           </Properties>
@@ -261,17 +259,17 @@
             <Property name="text" type="java.lang.String" value="Marrital Status:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="DateJoinedLabel1">
+        <Component class="javax.swing.JLabel" name="dateJoinedLabel1">
           <Properties>
             <Property name="text" type="java.lang.String" value="Date"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="PhoneNumberLabel1">
+        <Component class="javax.swing.JLabel" name="phoneNumberLabel1">
           <Properties>
             <Property name="text" type="java.lang.String" value="080123334457"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="EmployeesEmailLabel1">
+        <Component class="javax.swing.JLabel" name="emailLabel1">
           <Properties>
             <Property name="text" type="java.lang.String" value="email"/>
           </Properties>
@@ -323,7 +321,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="ResidentialAddressTextArea1">
+            <Component class="javax.swing.JTextArea" name="residentialAddressTextArea1">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="columns" type="int" value="20"/>
@@ -342,7 +340,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="PermanentAddressTextArea1">
+            <Component class="javax.swing.JTextArea" name="permanentAddressTextArea1">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="columns" type="int" value="20"/>
@@ -354,21 +352,21 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="EditProfileButton">
+        <Component class="javax.swing.JButton" name="editProfileButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Edit"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EditProfileButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editProfileButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="ProfileBackButton1">
+        <Component class="javax.swing.JButton" name="okButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ok"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ProfileBackButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="okButtonActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel77">
@@ -381,24 +379,49 @@
             <Property name="text" type="java.lang.String" value="Employee&apos;s ID"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="marritalStatusLabel">
+        <Component class="javax.swing.JComboBox" name="mStatusComboBox">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Employee Status"/>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="single"/>
+                <StringItem index="1" value="married"/>
+                <StringItem index="2" value="divorced"/>
+                <StringItem index="3" value="complicated"/>
+              </StringArray>
+            </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="sexLabel">
+        <Component class="javax.swing.JComboBox" name="sexComboBox">
           <Properties>
-            <Property name="text" type="java.lang.String" value="EmployeesSex"/>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="2">
+                <StringItem index="0" value="M"/>
+                <StringItem index="1" value="F"/>
+              </StringArray>
+            </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="departmentalLabel">
+        <Component class="javax.swing.JComboBox" name="departmentComboBox">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Employees Dept"/>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="Engineering"/>
+                <StringItem index="1" value="Operation"/>
+                <StringItem index="2" value="HSE"/>
+              </StringArray>
+            </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="designationLabel">
+        <Component class="javax.swing.JComboBox" name="designationsComboBox">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Employees Designation"/>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="Technician"/>
+                <StringItem index="1" value="Nurse"/>
+                <StringItem index="2" value="Engineer"/>
+                <StringItem index="3" value="Head of Department"/>
+              </StringArray>
+            </Property>
           </Properties>
         </Component>
       </SubComponents>

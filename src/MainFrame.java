@@ -47,7 +47,7 @@ public final class MainFrame extends javax.swing.JFrame {
         Enumeration<AbstractButton> elements = navButtons.getElements();
         while (elements.hasMoreElements()) {
             AbstractButton button = elements.nextElement();
-            button.setContentAreaFilled(button.equals(jButton1));
+            button.setContentAreaFilled(button.equals(setupButton));
         }
     }
 
@@ -56,7 +56,7 @@ public final class MainFrame extends javax.swing.JFrame {
         Enumeration<AbstractButton> elements = navButtons.getElements();
         while (elements.hasMoreElements()) {
             AbstractButton button = elements.nextElement();
-            button.setContentAreaFilled(button.equals(jButton2));
+            button.setContentAreaFilled(button.equals(paymentsButton));
         }
     }
 
@@ -65,7 +65,7 @@ public final class MainFrame extends javax.swing.JFrame {
         Enumeration<AbstractButton> elements = navButtons.getElements();
         while (elements.hasMoreElements()) {
             AbstractButton button = elements.nextElement();
-            button.setContentAreaFilled(button.equals(jButton2));
+            button.setContentAreaFilled(button.equals(paymentsButton));
         }
     }
 
@@ -74,7 +74,7 @@ public final class MainFrame extends javax.swing.JFrame {
         Enumeration<AbstractButton> elements = navButtons.getElements();
         while (elements.hasMoreElements()) {
             AbstractButton button = elements.nextElement();
-            button.setContentAreaFilled(button.equals(jButton3));
+            button.setContentAreaFilled(button.equals(employeesButton));
         }
     }
 
@@ -83,7 +83,7 @@ public final class MainFrame extends javax.swing.JFrame {
         Enumeration<AbstractButton> elements = navButtons.getElements();
         while (elements.hasMoreElements()) {
             AbstractButton button = elements.nextElement();
-            button.setContentAreaFilled(button.equals(jButton4));
+            button.setContentAreaFilled(button.equals(bankVoucherButton));
         }
     }
 
@@ -93,51 +93,51 @@ public final class MainFrame extends javax.swing.JFrame {
 
         navButtons = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        setupButton = new javax.swing.JButton();
+        paymentsButton = new javax.swing.JButton();
+        employeesButton = new javax.swing.JButton();
+        bankVoucherButton = new javax.swing.JButton();
         scene = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Setup");
-        navButtons.add(jButton1);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        setupButton.setText("Setup");
+        navButtons.add(setupButton);
+        setupButton.setContentAreaFilled(false);
+        setupButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        setupButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                setupButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Payments");
-        navButtons.add(jButton2);
-        jButton2.setContentAreaFilled(false);
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        paymentsButton.setText("Payments");
+        navButtons.add(paymentsButton);
+        paymentsButton.setContentAreaFilled(false);
+        paymentsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        paymentsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                paymentsButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Employees");
-        navButtons.add(jButton3);
-        jButton3.setContentAreaFilled(false);
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        employeesButton.setText("Employees");
+        navButtons.add(employeesButton);
+        employeesButton.setContentAreaFilled(false);
+        employeesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        employeesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                employeesButtonActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Bank Voucher");
-        navButtons.add(jButton4);
-        jButton4.setContentAreaFilled(false);
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        bankVoucherButton.setText("Bank Voucher");
+        navButtons.add(bankVoucherButton);
+        bankVoucherButton.setContentAreaFilled(false);
+        bankVoucherButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bankVoucherButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                bankVoucherButtonActionPerformed(evt);
             }
         });
 
@@ -147,13 +147,13 @@ public final class MainFrame extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(192, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(setupButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(paymentsButton)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(bankVoucherButton)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(employeesButton)
                 .addContainerGap(181, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -161,10 +161,10 @@ public final class MainFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)))
+                    .addComponent(setupButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(paymentsButton)
+                    .addComponent(employeesButton)
+                    .addComponent(bankVoucherButton)))
         );
 
         scene.setBackground(new java.awt.Color(255, 255, 255));
@@ -188,33 +188,33 @@ public final class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void setupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setupButtonActionPerformed
         // TODO add your handling code here:
         showSetupPanel();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_setupButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void paymentsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paymentsButtonActionPerformed
         // TODO add your handling code here:
         showPaymentsPanel();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_paymentsButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void employeesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeesButtonActionPerformed
         // TODO add your handling code here:
         showEmployeePanel();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_employeesButtonActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void bankVoucherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bankVoucherButtonActionPerformed
         // TODO add your handling code here:
         showBankVoucherPanel();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_bankVoucherButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton bankVoucherButton;
+    private javax.swing.JButton employeesButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.ButtonGroup navButtons;
+    private javax.swing.JButton paymentsButton;
     private javax.swing.JPanel scene;
+    private javax.swing.JButton setupButton;
     // End of variables declaration//GEN-END:variables
 }

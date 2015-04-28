@@ -50,9 +50,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="491" max="32767" attributes="0"/>
-                  <Component id="PayEmployeeBackButton" min="-2" max="-2" attributes="0"/>
+                  <Component id="backButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="PayEmployeePayButton" min="-2" max="-2" attributes="0"/>
+                  <Component id="payButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -62,8 +62,8 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="PayEmployeePayButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="PayEmployeeBackButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="payButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="backButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -71,12 +71,12 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="PayEmployeePayButton">
+        <Component class="javax.swing.JButton" name="payButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="PAY"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="PayEmployeeBackButton">
+        <Component class="javax.swing.JButton" name="backButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Back"/>
           </Properties>

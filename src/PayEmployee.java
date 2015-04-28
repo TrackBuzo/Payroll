@@ -24,8 +24,8 @@ public class PayEmployee extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel4 = new javax.swing.JPanel();
-        PayEmployeePayButton = new javax.swing.JButton();
-        PayEmployeeBackButton = new javax.swing.JButton();
+        payButton = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
 
@@ -35,9 +35,9 @@ public class PayEmployee extends javax.swing.JPanel {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setOpaque(false);
 
-        PayEmployeePayButton.setText("PAY");
+        payButton.setText("PAY");
 
-        PayEmployeeBackButton.setText("Back");
+        backButton.setText("Back");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -45,9 +45,9 @@ public class PayEmployee extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(491, Short.MAX_VALUE)
-                .addComponent(PayEmployeeBackButton)
+                .addComponent(backButton)
                 .addGap(18, 18, 18)
-                .addComponent(PayEmployeePayButton)
+                .addComponent(payButton)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -55,8 +55,8 @@ public class PayEmployee extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PayEmployeePayButton)
-                    .addComponent(PayEmployeeBackButton))
+                    .addComponent(payButton)
+                    .addComponent(backButton))
                 .addContainerGap())
         );
 
@@ -82,10 +82,10 @@ public class PayEmployee extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton PayEmployeeBackButton;
-    private javax.swing.JButton PayEmployeePayButton;
+    private javax.swing.JButton backButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JButton payButton;
     // End of variables declaration//GEN-END:variables
 }

@@ -29,7 +29,7 @@ public class Profile extends javax.swing.JDialog {
         Runnable runnable = () -> {
             loadData();
             setEmployeeDetails(employee);
-            EditProfileButton.setEnabled(true);
+            editProfileButton.setEnabled(true);
         };
         //Execute in another thread, to avoid program from being unresponsive
         Utility.getExecutorService().execute(runnable);
@@ -84,19 +84,19 @@ public class Profile extends javax.swing.JDialog {
         String firstName = employee.get(StaffTable.FNAME.toString());
         String lastName = employee.get(StaffTable.LNAME.toString());
         jLabel28.setText(firstName + " " + lastName + "'s Profile");
-        SurnameLabel1.setText(lastName);
-        FisrtNameLabel1.setText(firstName);
-        MiddleNameLabel1.setText(employee.get(StaffTable.OTHER_NAMES.toString()));
+        surnameLabel1.setText(lastName);
+        fisrtNameLabel1.setText(firstName);
+        middleNameLabel1.setText(employee.get(StaffTable.OTHER_NAMES.toString()));
         mStatusComboBox.setSelectedItem(employee.get(StaffTable.MARRITAL_STATUS.toString()));
         sexComboBox.setSelectedItem(employee.get(StaffTable.SEX.toString()));
         departmentComboBox.setSelectedItem(getDepartmentName(StaffTable.DEPARTMENT_ID.toString()));
         designationsComboBox.setSelectedItem(employee.get(StaffTable.DESIGNATION.toString()));
         long date = Long.parseLong(employee.get(StaffTable.DATE_JOINED.toString()));
-        DateJoinedLabel1.setText(new Date(date).toString());
-        PhoneNumberLabel1.setText(employee.get(StaffTable.PHONE.toString()));
-        EmployeesEmailLabel1.setText(employee.get(StaffTable.EMAIL.toString()));
-        ResidentialAddressTextArea1.setText(employee.get(StaffTable.RESIDENTIAL_ADDRESS.toString()));
-        PermanentAddressTextArea1.setText(employee.get(StaffTable.PERMANENT_ADDRESS.toString()));
+        dateJoinedLabel1.setText(new Date(date).toString());
+        phoneNumberLabel1.setText(employee.get(StaffTable.PHONE.toString()));
+        emailLabel1.setText(employee.get(StaffTable.EMAIL.toString()));
+        residentialAddressTextArea1.setText(employee.get(StaffTable.RESIDENTIAL_ADDRESS.toString()));
+        permanentAddressTextArea1.setText(employee.get(StaffTable.PERMANENT_ADDRESS.toString()));
 
     }
 
@@ -106,11 +106,11 @@ public class Profile extends javax.swing.JDialog {
         sexComboBox.setEnabled(true);
         departmentComboBox.setEnabled(true);
         designationsComboBox.setEnabled(true);
-        ResidentialAddressTextArea1.setEditable(true);
-        PermanentAddressTextArea1.setEditable(true);
+        residentialAddressTextArea1.setEditable(true);
+        permanentAddressTextArea1.setEditable(true);
 
-        EditProfileButton.setText("Update");
-        EditProfileButton.setActionCommand("update");
+        editProfileButton.setText("Update");
+        editProfileButton.setActionCommand("update");
     }
 
     private HashMap<String, String> getEditedData() {
@@ -124,22 +124,22 @@ public class Profile extends javax.swing.JDialog {
     private void saveChanges() {
         if (anyFieldEdited) {
             //Save Edited Fields
-            EditProfileButton.setEnabled(false);
+            editProfileButton.setEnabled(false);
             Runnable runnable = () -> {
                 boolean fieldsSaved = DatabaseImpl
                         .updateEmployee(staffIDLabel.getText(), getEditedData());
-                EditProfileButton.setEnabled(true);
+                editProfileButton.setEnabled(true);
 
                 if (fieldsSaved) {
                     mStatusComboBox.setEnabled(false);
                     sexComboBox.setEnabled(false);
                     departmentComboBox.setEnabled(false);
                     designationsComboBox.setEnabled(false);
-                    ResidentialAddressTextArea1.setEditable(false);
-                    PermanentAddressTextArea1.setEditable(false);
+                    residentialAddressTextArea1.setEditable(false);
+                    permanentAddressTextArea1.setEditable(false);
 
-                    EditProfileButton.setText("Edit");
-                    EditProfileButton.setActionCommand("edit");
+                    editProfileButton.setText("Edit");
+                    editProfileButton.setActionCommand("edit");
                     anyFieldEdited = false;
                 }
             };
@@ -150,11 +150,11 @@ public class Profile extends javax.swing.JDialog {
             sexComboBox.setEnabled(false);
             departmentComboBox.setEnabled(false);
             designationsComboBox.setEnabled(false);
-            ResidentialAddressTextArea1.setEditable(false);
-            PermanentAddressTextArea1.setEditable(false);
+            residentialAddressTextArea1.setEditable(false);
+            permanentAddressTextArea1.setEditable(false);
 
-            EditProfileButton.setText("Edit");
-            EditProfileButton.setActionCommand("edit");
+            editProfileButton.setText("Edit");
+            editProfileButton.setActionCommand("edit");
         }
     }
 
@@ -166,15 +166,15 @@ public class Profile extends javax.swing.JDialog {
         CompanysNameLabel1 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
-        SurnameLabel1 = new javax.swing.JLabel();
-        FisrtNameLabel1 = new javax.swing.JLabel();
+        surnameLabel1 = new javax.swing.JLabel();
+        fisrtNameLabel1 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
-        MiddleNameLabel1 = new javax.swing.JLabel();
+        middleNameLabel1 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
         jLabel68 = new javax.swing.JLabel();
-        DateJoinedLabel1 = new javax.swing.JLabel();
-        PhoneNumberLabel1 = new javax.swing.JLabel();
-        EmployeesEmailLabel1 = new javax.swing.JLabel();
+        dateJoinedLabel1 = new javax.swing.JLabel();
+        phoneNumberLabel1 = new javax.swing.JLabel();
+        emailLabel1 = new javax.swing.JLabel();
         jLabel69 = new javax.swing.JLabel();
         jLabel70 = new javax.swing.JLabel();
         jLabel71 = new javax.swing.JLabel();
@@ -184,17 +184,17 @@ public class Profile extends javax.swing.JDialog {
         jLabel75 = new javax.swing.JLabel();
         jLabel76 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
-        ResidentialAddressTextArea1 = new javax.swing.JTextArea();
+        residentialAddressTextArea1 = new javax.swing.JTextArea();
         jScrollPane9 = new javax.swing.JScrollPane();
-        PermanentAddressTextArea1 = new javax.swing.JTextArea();
-        EditProfileButton = new javax.swing.JButton();
-        ProfileBackButton1 = new javax.swing.JButton();
+        permanentAddressTextArea1 = new javax.swing.JTextArea();
+        editProfileButton = new javax.swing.JButton();
+        okButton = new javax.swing.JButton();
         jLabel77 = new javax.swing.JLabel();
         staffIDLabel = new javax.swing.JLabel();
-        marritalStatusLabel = new javax.swing.JLabel();
-        sexLabel = new javax.swing.JLabel();
-        departmentalLabel = new javax.swing.JLabel();
-        designationLabel = new javax.swing.JLabel();
+        mStatusComboBox = new javax.swing.JComboBox();
+        sexComboBox = new javax.swing.JComboBox();
+        departmentComboBox = new javax.swing.JComboBox();
+        designationsComboBox = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -211,23 +211,23 @@ public class Profile extends javax.swing.JDialog {
 
         jLabel65.setText("Surname:");
 
-        SurnameLabel1.setText("Employee's Surname");
+        surnameLabel1.setText("Employee's Surname");
 
-        FisrtNameLabel1.setText("Employee's Firstname");
+        fisrtNameLabel1.setText("Employee's Firstname");
 
         jLabel66.setText("First Name:");
 
-        MiddleNameLabel1.setText("Employee's MiddleName");
+        middleNameLabel1.setText("Employee's MiddleName");
 
         jLabel67.setText("Middle Name:");
 
         jLabel68.setText("Marrital Status:");
 
-        DateJoinedLabel1.setText("Date");
+        dateJoinedLabel1.setText("Date");
 
-        PhoneNumberLabel1.setText("080123334457");
+        phoneNumberLabel1.setText("080123334457");
 
-        EmployeesEmailLabel1.setText("email");
+        emailLabel1.setText("email");
 
         jLabel69.setText("Sex:");
 
@@ -245,38 +245,38 @@ public class Profile extends javax.swing.JDialog {
 
         jLabel76.setText("Permanent Address:");
 
-        ResidentialAddressTextArea1.setEditable(false);
-        ResidentialAddressTextArea1.setColumns(20);
-        ResidentialAddressTextArea1.setRows(5);
-        ResidentialAddressTextArea1.addKeyListener(new java.awt.event.KeyAdapter() {
+        residentialAddressTextArea1.setEditable(false);
+        residentialAddressTextArea1.setColumns(20);
+        residentialAddressTextArea1.setRows(5);
+        residentialAddressTextArea1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 textAreaValueChanged(evt);
             }
         });
-        jScrollPane8.setViewportView(ResidentialAddressTextArea1);
+        jScrollPane8.setViewportView(residentialAddressTextArea1);
 
-        PermanentAddressTextArea1.setEditable(false);
-        PermanentAddressTextArea1.setColumns(20);
-        PermanentAddressTextArea1.setRows(5);
-        PermanentAddressTextArea1.addKeyListener(new java.awt.event.KeyAdapter() {
+        permanentAddressTextArea1.setEditable(false);
+        permanentAddressTextArea1.setColumns(20);
+        permanentAddressTextArea1.setRows(5);
+        permanentAddressTextArea1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 textAreaValueChanged(evt);
             }
         });
-        jScrollPane9.setViewportView(PermanentAddressTextArea1);
+        jScrollPane9.setViewportView(permanentAddressTextArea1);
 
-        EditProfileButton.setText("Edit");
-        EditProfileButton.setEnabled(false);
-        EditProfileButton.addActionListener(new java.awt.event.ActionListener() {
+        editProfileButton.setText("Edit");
+        editProfileButton.setEnabled(false);
+        editProfileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditProfileButtonActionPerformed(evt);
+                editProfileButtonActionPerformed(evt);
             }
         });
 
-        ProfileBackButton1.setText("Ok");
-        ProfileBackButton1.addActionListener(new java.awt.event.ActionListener() {
+        okButton.setText("Ok");
+        okButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ProfileBackButton1ActionPerformed(evt);
+                okButtonActionPerformed(evt);
             }
         });
 
@@ -284,13 +284,13 @@ public class Profile extends javax.swing.JDialog {
 
         staffIDLabel.setText("Employee's ID");
 
-        marritalStatusLabel.setText("Employee Status");
+        mStatusComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "single", "married", "divorced", "complicated" }));
 
-        sexLabel.setText("EmployeesSex");
+        sexComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "M", "F" }));
 
-        departmentalLabel.setText("Employees Dept");
+        departmentComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Engineering", "Operation", "HSE" }));
 
-        designationLabel.setText("Employees Designation");
+        designationsComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Technician", "Nurse", "Engineer", "Head of Department" }));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -303,9 +303,9 @@ public class Profile extends javax.swing.JDialog {
                     .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(EditProfileButton)
+                        .addComponent(editProfileButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ProfileBackButton1))
+                        .addComponent(okButton))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel72, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -316,17 +316,17 @@ public class Profile extends javax.swing.JDialog {
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
-                            .addComponent(PhoneNumberLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(EmployeesEmailLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(DateJoinedLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(phoneNumberLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(emailLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(dateJoinedLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel70, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
                             .addComponent(jLabel71, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(departmentalLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(designationLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(departmentComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(designationsComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -342,12 +342,14 @@ public class Profile extends javax.swing.JDialog {
                                 .addComponent(jLabel69, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(marritalStatusLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(FisrtNameLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(MiddleNameLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(SurnameLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(fisrtNameLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(middleNameLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(surnameLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(staffIDLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sexLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(mStatusComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(sexComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -364,45 +366,42 @@ public class Profile extends javax.swing.JDialog {
                 .addGap(1, 1, 1)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel65)
-                    .addComponent(SurnameLabel1))
+                    .addComponent(surnameLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel66)
-                    .addComponent(FisrtNameLabel1))
+                    .addComponent(fisrtNameLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel67)
-                    .addComponent(MiddleNameLabel1))
+                    .addComponent(middleNameLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel68)
-                    .addComponent(marritalStatusLabel))
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel69))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(sexLabel)))
+                    .addComponent(mStatusComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel69)
+                    .addComponent(sexComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel70)
-                    .addComponent(departmentalLabel))
+                    .addComponent(departmentComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel71)
-                    .addComponent(designationLabel))
+                    .addComponent(designationsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel72)
-                    .addComponent(DateJoinedLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dateJoinedLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PhoneNumberLabel1)
+                    .addComponent(phoneNumberLabel1)
                     .addComponent(jLabel73))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EmployeesEmailLabel1)
+                    .addComponent(emailLabel1)
                     .addComponent(jLabel74))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -417,8 +416,8 @@ public class Profile extends javax.swing.JDialog {
                         .addComponent(jLabel76, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ProfileBackButton1)
-                    .addComponent(EditProfileButton))
+                    .addComponent(okButton)
+                    .addComponent(editProfileButton))
                 .addContainerGap())
         );
 
@@ -436,20 +435,20 @@ public class Profile extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ProfileBackButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfileBackButton1ActionPerformed
+    private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
         // TODO add your handling code here:
         saveChanges();
         setVisible(false);
-    }//GEN-LAST:event_ProfileBackButton1ActionPerformed
+    }//GEN-LAST:event_okButtonActionPerformed
 
-    private void EditProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditProfileButtonActionPerformed
+    private void editProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProfileButtonActionPerformed
         // TODO add your handling code here:
-        if (EditProfileButton.getActionCommand().equalsIgnoreCase("edit")) {
+        if (editProfileButton.getActionCommand().equalsIgnoreCase("edit")) {
             allowEdit();
         } else {
             saveChanges();
         }
-    }//GEN-LAST:event_EditProfileButtonActionPerformed
+    }//GEN-LAST:event_editProfileButtonActionPerformed
 
     private void textAreaValueChanged(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textAreaValueChanged
         // TODO add your handling code here:
@@ -458,18 +457,12 @@ public class Profile extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CompanysNameLabel1;
-    private javax.swing.JLabel DateJoinedLabel1;
-    private javax.swing.JButton EditProfileButton;
-    private javax.swing.JLabel EmployeesEmailLabel1;
-    private javax.swing.JLabel FisrtNameLabel1;
-    private javax.swing.JLabel MiddleNameLabel1;
-    private javax.swing.JTextArea PermanentAddressTextArea1;
-    private javax.swing.JLabel PhoneNumberLabel1;
-    private javax.swing.JButton ProfileBackButton1;
-    private javax.swing.JTextArea ResidentialAddressTextArea1;
-    private javax.swing.JLabel SurnameLabel1;
-    private javax.swing.JLabel departmentalLabel;
-    private javax.swing.JLabel designationLabel;
+    private javax.swing.JLabel dateJoinedLabel1;
+    private javax.swing.JComboBox departmentComboBox;
+    private javax.swing.JComboBox designationsComboBox;
+    private javax.swing.JButton editProfileButton;
+    private javax.swing.JLabel emailLabel1;
+    private javax.swing.JLabel fisrtNameLabel1;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
@@ -487,8 +480,14 @@ public class Profile extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JLabel marritalStatusLabel;
-    private javax.swing.JLabel sexLabel;
+    private javax.swing.JComboBox mStatusComboBox;
+    private javax.swing.JLabel middleNameLabel1;
+    private javax.swing.JButton okButton;
+    private javax.swing.JTextArea permanentAddressTextArea1;
+    private javax.swing.JLabel phoneNumberLabel1;
+    private javax.swing.JTextArea residentialAddressTextArea1;
+    private javax.swing.JComboBox sexComboBox;
     private javax.swing.JLabel staffIDLabel;
+    private javax.swing.JLabel surnameLabel1;
     // End of variables declaration//GEN-END:variables
 }
