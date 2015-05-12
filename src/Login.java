@@ -37,7 +37,7 @@ public class Login extends JDialog {
         setAlwaysOnTop(true);
         this.passwordFile = new File(System.getProperty("user.dir"), "pwordlogger.dat");
         JPanel panel = new JPanel();
-        panel.add(new JLabel("Enter Password"));
+        panel.add(new JLabel("Enter Password (minimum of 8 charecters)"));
         pField = new JPasswordField(20);
         rpField = new JPasswordField(20);
         pField.addActionListener((ActionEvent e) -> {
