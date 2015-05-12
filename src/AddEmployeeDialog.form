@@ -94,7 +94,7 @@
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="NewEmployeeFirstName" pref="142" max="32767" attributes="0"/>
+                                      <Component id="newEmployeeFirstNameTextField" pref="142" max="32767" attributes="0"/>
                                       <Component id="jLabel8" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -122,7 +122,7 @@
                           <Component id="NewEmployeeNextOfKinTextField" alignment="0" max="32767" attributes="0"/>
                           <Component id="jComboBox5" alignment="0" max="32767" attributes="0"/>
                           <Component id="NewEmployeeAccountNumberTextField" alignment="0" pref="197" max="32767" attributes="0"/>
-                          <Component id="NewEmployeeOtherName" max="32767" attributes="0"/>
+                          <Component id="NewEmployeeOtherNameTextField" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -136,8 +136,8 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="NewEmployeeSurname" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="NewEmployeeFirstName" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="NewEmployeeOtherName" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="newEmployeeFirstNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="NewEmployeeOtherNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -197,9 +197,9 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="103" groupAlignment="3" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="cancelButton" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="submitButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="submitButton" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -268,15 +268,15 @@
         </Component>
         <Component class="javax.swing.JTextField" name="NewEmployeeSurname">
         </Component>
-        <Component class="javax.swing.JTextField" name="NewEmployeeFirstName">
+        <Component class="javax.swing.JTextField" name="newEmployeeFirstNameTextField">
           <Properties>
             <Property name="text" type="java.lang.String" value="Enter First Name"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NewEmployeeFirstNameActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="newEmployeeFirstNameTextFieldActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="NewEmployeeOtherName">
+        <Component class="javax.swing.JTextField" name="NewEmployeeOtherNameTextField">
           <Properties>
             <Property name="text" type="java.lang.String" value="Enter other Name"/>
           </Properties>

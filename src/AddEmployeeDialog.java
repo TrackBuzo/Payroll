@@ -18,8 +18,8 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
         super(parent, true);
         initComponents();
         Utility.setPlaceholder(NewEmployeeSurname, "Surname");
-        Utility.setPlaceholder(NewEmployeeFirstName, "First Name");
-        Utility.setPlaceholder(NewEmployeeOtherName, "Other Name(s)");
+        Utility.setPlaceholder(newEmployeeFirstNameTextField, "First Name");
+        Utility.setPlaceholder(NewEmployeeOtherNameTextField, "Other Name(s)");
         Utility.setPlaceholder(NewEmployeeStaffIdTextField, "Staff ID");
         Utility.setPlaceholder(NewEmployeeEmailTextField, "email");
         Utility.setPlaceholder(NewEmployeePhoneNumberTextField, "Phone Number");
@@ -53,8 +53,8 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
         jLabel16 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         NewEmployeeSurname = new javax.swing.JTextField();
-        NewEmployeeFirstName = new javax.swing.JTextField();
-        NewEmployeeOtherName = new javax.swing.JTextField();
+        newEmployeeFirstNameTextField = new javax.swing.JTextField();
+        NewEmployeeOtherNameTextField = new javax.swing.JTextField();
         NewEmployeeStaffIdTextField = new javax.swing.JTextField();
         NewEmployeeEmailTextField = new javax.swing.JTextField();
         NewEmployeePhoneNumberTextField = new javax.swing.JTextField();
@@ -101,14 +101,14 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
 
         jLabel18.setText("Pay Point:");
 
-        NewEmployeeFirstName.setText("Enter First Name");
-        NewEmployeeFirstName.addActionListener(new java.awt.event.ActionListener() {
+        newEmployeeFirstNameTextField.setText("Enter First Name");
+        newEmployeeFirstNameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NewEmployeeFirstNameActionPerformed(evt);
+                newEmployeeFirstNameTextFieldActionPerformed(evt);
             }
         });
 
-        NewEmployeeOtherName.setText("Enter other Name");
+        NewEmployeeOtherNameTextField.setText("Enter other Name");
 
         NewEmployeeStaffIdTextField.setText("Staff Id");
         NewEmployeeStaffIdTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -216,7 +216,7 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
                                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(NewEmployeeFirstName, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                                    .addComponent(newEmployeeFirstNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
                                     .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -236,7 +236,7 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
                         .addComponent(NewEmployeeNextOfKinTextField, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jComboBox5, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(NewEmployeeAccountNumberTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
-                        .addComponent(NewEmployeeOtherName)))
+                        .addComponent(NewEmployeeOtherNameTextField)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -246,8 +246,8 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NewEmployeeSurname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NewEmployeeFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NewEmployeeOtherName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(newEmployeeFirstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NewEmployeeOtherNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -295,7 +295,7 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cancelButton)
                     .addComponent(submitButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -340,16 +340,15 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox4ActionPerformed
 
-    private void NewEmployeeFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewEmployeeFirstNameActionPerformed
+    private void newEmployeeFirstNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newEmployeeFirstNameTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NewEmployeeFirstNameActionPerformed
+    }//GEN-LAST:event_newEmployeeFirstNameTextFieldActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField NewEmployeeAccountNumberTextField;
     private javax.swing.JTextField NewEmployeeEmailTextField;
-    private javax.swing.JTextField NewEmployeeFirstName;
     private javax.swing.JTextField NewEmployeeNextOfKinTextField;
-    private javax.swing.JTextField NewEmployeeOtherName;
+    private javax.swing.JTextField NewEmployeeOtherNameTextField;
     private javax.swing.JTextArea NewEmployeePermanentAddressTextArea;
     private javax.swing.JTextField NewEmployeePhoneNumberTextField;
     private javax.swing.JTextArea NewEmployeeResidentialAddresssTextArea;
@@ -378,6 +377,7 @@ public class AddEmployeeDialog extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField newEmployeeFirstNameTextField;
     private javax.swing.JButton submitButton;
     // End of variables declaration//GEN-END:variables
 }
